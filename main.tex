@@ -80,8 +80,12 @@
             \label{fig:example_route_card}
          \end{figure}
          
-         I think there should be options for how the route card will be laid out, potentially allowing the user to directly edit the route card which will be outputted. This may be a sub-program within the main program which allows the user to view and edit the data of the route card. An example route card which the program should aim to output can be seen in \cref{fig:example_route_card}.
-         
+         I think there should be options for how the route card will be laid out, potentially allowing the user to directly edit the route card which will be outputted. This may be a sub-program within the main program which enables the user to view and edit the data of the route card. An example route card which the program should aim to output can be seen in \cref{fig:example_route_card}.
+
+    \subsection{Mapping APIs}
+
+        Choosing the most suitable API for gathering map data is paramount to the project's success. The map data needs to be able to be accessed relatively quickly and reliably, potentially the user could potentially interact with an interactive map as seen in Google Maps and draw the route in real-time, however, this may be out of the scope of the project, so instead I could allow the user to use an interactive map to find a snapshot location of their "work area" where then they can draw their route on top of which will have an inbuilt scale automatically scaled to the same scale as when they were using the interactive map. The user's waypoint locations could be saved to allow for the later creation of a route card or as previously mentioned create a route which can be edited or expanded upon later. Optimally the mapping API should allow me to feed in some latitude and longitude and it feed back some mapping data in the form of a photo or other source which can then be overlaid onto the screen and I could use some module such as pygame or tkinter in python to move based on the user's actions.
+    
 \newpage
 
 \section{Documented Design}
