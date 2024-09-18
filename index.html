@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Maps API Session Token Request</title>
+</head>
+<body>
+    <h1>Google Maps API Session Token Request</h1>
+    <button onclick="getSessionToken()">Generate Session Token</button>
+    <p id="result"></p>
+
+    <script>
+        function getSessionToken() {
+            const apiKey = 'AIzaSyAkQJZR4jHJmB3X9_j63joTYSgwZDRXKmc'; // Replace with your API Key
+            const url = `https://tile.googleapis.com/v1/createSession?key=${apiKey}`;
+            
+            const body = {
+                mapType: "terrain",
+                language: "en-US",
+                region: "US",
+                layerTypes: ["layerRoadmap"]
+            };
+
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(body)
+            })
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error(`Error: ${response.status} ${response.statusText}`);
+                }
+            })
+            .then(data => {
+                document.getElementById('result').textContent = `Session Token: ${data.sessionToken}`;
+            })
+            .catch(error => {
+                document.getElementById('result').textContent = `Failed to generate session token: ${error.message}`;
+            });
+        }
+    </script>
+    <p>Note: Make sure to replace the API key with your own.</p>
+</body>
+</html>
