@@ -36,5 +36,6 @@ coverage/
 *.tmp
 *.swp
 
-# Ignore credentials.properties
+# Ignore secrets
 *.properties
+mysecrets.py
