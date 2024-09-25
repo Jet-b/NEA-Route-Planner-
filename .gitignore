@@ -37,4 +37,4 @@ coverage/
 *.swp
 
 # Ignore credentials.properties
-credentials.properties
+*.properties
